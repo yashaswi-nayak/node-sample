@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "nyc --reporter=html --reporter=text mocha ./tests/",
+    "test": "nyc --reporter=cobertura --reporter=html --reporter=text mocha ./tests/",
     "test-coverage": "nyc --reporter=cobertura mocha ./tests/"
   },
   "author": "",
