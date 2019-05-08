@@ -7,7 +7,7 @@ pipeline {
         stage('Build'){
             steps {
                 sh "echo ${env.BUILD_NUMBER}"
-                sh "echo  ${env.previousBuild}"
+                sh "echo  ${currentBuild.previousBuild.number}"
                 sh 'npm install'
             }
        }
