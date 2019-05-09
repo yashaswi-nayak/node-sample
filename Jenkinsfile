@@ -1,8 +1,3 @@
-def remote = [:]
-remote.name = "BFL_UAT"
-remote.host = "35.229.57.74"
-remote.allowAnyHosts = true
-
 pipeline {
     agent any
     
@@ -14,9 +9,6 @@ pipeline {
     tools {nodejs "Node8"}
         
     stages {
-       withCredentials([usernamePassword(credentialsId: 'sshUserAcct', passwordVariable: 'k&#ghj#vX(-!N<@f', usernameVariable: 'root')]) {
-        remote.user = userName
-        remote.password = password
         
         stage('Build'){
             steps {
@@ -44,6 +36,5 @@ pipeline {
             echo 'Serving'
            }
        }
-    }
     }
 }
