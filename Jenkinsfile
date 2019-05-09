@@ -1,14 +1,18 @@
 pipeline {
     agent any
+    
+    environment {
+        CURR_VER = $BUILD_NUMBER
+        PRE_VER  = $currentBuild.previousBuild.number
+    }
 
     tools {nodejs "Node8"}
 
     stages {
         stage('Build'){
             steps {
-                sh "echo ${BUILD_NUMBER}"
-                prevBuild=sh(script: "echo \$(expr $BUILD_NUMBER - 1)",returnStdout: true,)
-                sh "echo  \$(echo 'FUN YAY' && echo \${prevBuild})"
+                sh "echo ${env.CURR_VER}"
+                sh "echo  \$(echo 'FUN YAY' && echo \${env.PRE_VER})"
                 sh 'npm install'
             }
        }
