@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         CURR_VER = '$BUILD_NUMBER'
-        PRE_VER  = '$currentBuild.previousBuild.number'
+        PRE_VER  = '${currentBuild.previousBuild.number}'
     }
 
     tools {nodejs "Node8"}
