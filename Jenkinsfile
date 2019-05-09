@@ -2,8 +2,8 @@ pipeline {
     agent any
     
     environment {
-        CURR_VER = $BUILD_NUMBER
-        PRE_VER  = $currentBuild.previousBuild.number
+        CURR_VER = '$BUILD_NUMBER'
+        PRE_VER  = '$currentBuild.previousBuild.number'
     }
 
     tools {nodejs "Node8"}
