@@ -7,7 +7,8 @@ pipeline {
         stage('Build'){
             steps {
                 sh "echo ${BUILD_NUMBER}"
-                sh "echo  $(echo 'FUN YAY' && (${currentBuild.previousBuild.number}))"
+                sh "prevBuild=$(expr $BUILD_NUMBER - 1)"
+                sh "echo  $(echo 'FUN YAY' && $prevBuild)"
                 sh 'npm install'
             }
        }
