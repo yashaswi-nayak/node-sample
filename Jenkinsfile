@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         CURR_VER = '$BUILD_NUMBER'
-        PRE_VER  = 'sh($(expr $BUILD_NUMBER - 1))'
+        PRE_VER  = 'sh "$(expr $BUILD_NUMBER - 1)"'
     }
 
     tools {nodejs "Node8"}
