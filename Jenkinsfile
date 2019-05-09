@@ -12,6 +12,7 @@ pipeline {
         stage('Build'){
             steps {
                 sh "echo ${env.CURR_VER}"
+                sh "echo ${env.PRE_VER}"
                 sh "echo  \$(echo 'FUN YAY' && echo \${env.PRE_VER})"
                 sh 'npm install'
             }
