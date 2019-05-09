@@ -12,12 +12,12 @@ pipeline {
     }
 
     tools {nodejs "Node8"}
-
-    withCredentials([usernamePassword(credentialsId: 'sshUserAcct', passwordVariable: 'k&#ghj#vX(-!N<@f', usernameVariable: 'root')]) {
+        
+    stages {
+       withCredentials([usernamePassword(credentialsId: 'sshUserAcct', passwordVariable: 'k&#ghj#vX(-!N<@f', usernameVariable: 'root')]) {
         remote.user = userName
         remote.password = password
         
-    stages {
         stage('Build'){
             steps {
                 sh "echo ${env.CURR_VER}"
