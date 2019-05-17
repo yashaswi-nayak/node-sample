@@ -37,4 +37,12 @@ pipeline {
            }
        }
     }
+     post {
+        always {
+          step([$class: 'Mailer',
+            notifyEveryUnstableBuild: true,
+            recipients: "Yashaswi.Nayak@mindtree.com",
+            sendToIndividuals: true])
+        }
+      }
 }
