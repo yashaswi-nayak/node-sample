@@ -1,5 +1,7 @@
 pipeline {
-    agent slave01
+    agent {
+        label 'slave01'
+    }
     
     environment {
         CURR_VER = '$BUILD_NUMBER'
