@@ -1,5 +1,5 @@
 pipeline {
-    agent 'jenks-slave-1'
+    agent jenks-slave-1
     
     environment {
         CURR_VER = '$BUILD_NUMBER'
