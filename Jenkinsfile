@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent 'jenks-slave-1'
     
     environment {
         CURR_VER = '$BUILD_NUMBER'
@@ -37,12 +37,4 @@ pipeline {
            }
        }
     }
-     post {
-        always {
-          step([$class: 'Mailer',
-            notifyEveryUnstableBuild: true,
-            recipients: "nykyash@gmail.com",
-            sendToIndividuals: true])
-        }
-      }
 }
