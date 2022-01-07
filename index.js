@@ -8,13 +8,21 @@ app.get('/', function (req, res) {
 });
 
 app.get('/hello', function (req, res) {
-    res.send('hello world2');
+    res.send('hello world 1');
 });
 
 app.get('/hello2', function (req, res) {
     res.send('hello world2');
 });
 //listen to port 3000 by default
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 3000, function (err){
+    if (err) {
+        console.log("Error: ", err)
+    }
+    else {
+        console.log("Listening on PORT: 3000")
+    }
+    
+});
 
 module.exports = app;
